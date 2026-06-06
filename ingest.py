@@ -35,21 +35,19 @@ print(f"Resume Pages Loaded: {len(resume_docs)}")
 # GITHUB REPOSITORIES
 # -----------------------------
 
-repos_path = r"data/github/repos"
+readmes_path = r"data/github/readmes"
 
-for repo in os.listdir(repos_path):
+for file in os.listdir(readmes_path):
 
-    repo_path = os.path.join(repos_path, repo)
+    if file.endswith(".md"):
 
-    readme_path = os.path.join(
-        repo_path,
-        "README.md"
-    )
-
-    if os.path.exists(readme_path):
+        file_path = os.path.join(
+            readmes_path,
+            file
+        )
 
         with open(
-            readme_path,
+            file_path,
             "r",
             encoding="utf-8"
         ) as f:
@@ -60,13 +58,12 @@ for repo in os.listdir(repos_path):
             Document(
                 page_content=content,
                 metadata={
-                    "source": repo
+                    "source": file.replace(".md", "")
                 }
             )
         )
 
-        print(f"Loaded README from: {repo}")
-
+        print(f"Loaded: {file}")
 print(f"\nTotal Documents Loaded: {len(documents)}")
 
 # -----------------------------
