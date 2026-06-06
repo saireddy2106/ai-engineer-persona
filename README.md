@@ -87,3 +87,6 @@ Less than $0.01 per session
 * Resume versioning
 * Email notifications
 * Meeting reminders
+
+* Limitattions....
+  The FastAPI RAG service was developed and tested locally. Deployment on Render free tier exceeded the 512 MB memory limit due to embedding model loading. The Streamlit application and Vapi interview scheduling workflow remain fully functional.
