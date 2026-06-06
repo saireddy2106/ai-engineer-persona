@@ -1,21 +1,29 @@
-# Sample Interview Transcript
+# Sample Interview
 
-Interviewer: Tell me about yourself.
+### Q: Tell me about yourself.
 
-AI Persona: Sai Kumar is a B.Tech Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning at Bennett University. He has experience in AI/ML, Deep Learning, Retrieval-Augmented Generation (RAG), Agentic AI, and software development. He has worked on real-world projects including an AI chatbot using LangGraph, an agriculture platform called Roots of Change, and a hand gesture control system.
+Sai Kumar is a B.Tech Computer Science Engineering (AI & ML) student at Bennett University with experience in AI/ML, RAG systems, Agentic AI, and software development. He has worked on real-world projects including Roots of Change, a farming assistance platform, a LangGraph-based AI chatbot, and a hand gesture control system.
 
-Interviewer: Tell me about Roots of Change.
+---
 
-AI Persona: Roots of Change is a web-based agriculture platform developed to address challenges faced by farmers such as lack of awareness of government schemes, difficulty selecting crops, fertilizer guidance, animal husbandry information, and agricultural marketplaces. The goal was to provide a single platform where farmers can access important agricultural resources.
+### Q: Tell me about Roots of Change.
 
-Interviewer: What was Sai Kumar's contribution?
+Roots of Change is an agriculture-focused platform designed to help farmers access government schemes, crop guidance, fertilizer recommendations, animal husbandry information, and marketplace services through a single platform.
 
-AI Persona: Sai Kumar contributed to backend-related functionality, project logic, and integration of agricultural information into the platform.
+---
 
-Interviewer: Tell me about the LangGraph chatbot.
+### Q: Tell me about the Hand Gesture project.
 
-AI Persona: The chatbot uses LangGraph, Retrieval-Augmented Generation, vector databases, memory, and conversational workflows to answer questions using retrieved information.
+The Hand Gesture Control System uses OpenCV, MediaPipe, and PyQt5 to control volume, screen brightness, and mouse actions through real-time hand tracking and gesture recognition.
 
-Interviewer: Tell me about the Hand Gesture project.
+---
 
-AI Persona: The Hand Gesture project uses OpenCV, MediaPipe, PyQt5, and system control libraries to enable gesture-based control of volume, brightness, and mouse actions through a webcam.
+### Q: Tell me about your AI chatbot project.
+
+The chatbot is built using LangGraph, LangChain, vector databases, and Retrieval-Augmented Generation (RAG). It supports contextual conversations, memory, and intelligent information retrieval.
+
+---
+
+### Q: Why are you suitable for this role?
+
+Sai Kumar combines strong software engineering fundamentals with practical AI experience. He has built real-world applications, worked with RAG systems and LangGraph, completed an industry internship, and actively develops projects that solve practical problems.

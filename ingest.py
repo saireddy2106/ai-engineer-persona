@@ -24,7 +24,8 @@ resume_docs = loader.load()
 
 for doc in resume_docs:
     doc.metadata = {
-        "source": "resume"
+        "source": "resume",
+        "type": "resume"
     }
 
 documents.extend(resume_docs)
@@ -54,11 +55,14 @@ for file in os.listdir(readmes_path):
 
             content = f.read()
 
+        project_name = file.replace(".md", "")
+
         documents.append(
             Document(
                 page_content=content,
                 metadata={
-                    "source": file.replace(".md", "")
+                    "source": project_name,
+                    "type": "project"
                 }
             )
         )
@@ -71,8 +75,8 @@ print(f"\nTotal Documents Loaded: {len(documents)}")
 # -----------------------------
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200
+    chunk_size=700,
+    chunk_overlap=100
 )
 
 chunks = text_splitter.split_documents(
@@ -80,7 +84,10 @@ chunks = text_splitter.split_documents(
 )
 
 print(f"\nTotal Chunks: {len(chunks)}")
+print("\nChunk Sources:\n")
 
+for chunk in chunks[:10]:
+    print(chunk.metadata)
 # -----------------------------
 # EMBEDDINGS
 # -----------------------------

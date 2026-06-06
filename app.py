@@ -1,9 +1,8 @@
 import streamlit as st
 from dotenv import load_dotenv
-
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_groq import ChatGroq
 
 load_dotenv()
 
@@ -34,15 +33,13 @@ with open(
 # -----------------------------------
 # CACHE
 # -----------------------------------
-
 @st.cache_resource
 def load_llm():
 
-    return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+    return ChatGroq(
+        model_name="llama-3.3-70b-versatile",
         temperature=0
     )
-
 
 @st.cache_resource
 def load_db():
@@ -152,10 +149,7 @@ You can ask me about:
                 docs = db.similarity_search(
                     question,
                     k=5,
-                    filter={
-                        "source":
-                        "rootsofchange_modernizing-Agriculture"
-                    }
+                    filter={"source": "roots_of_change"}
                 )
 
             elif (
@@ -166,10 +160,7 @@ You can ask me about:
                 docs = db.similarity_search(
                     question,
                     k=5,
-                    filter={
-                        "source":
-                        "HandGesture-Project"
-                    }
+                    filter={"source": "hand_gesture"}
                 )
 
             elif (
@@ -180,10 +171,7 @@ You can ask me about:
                 docs = db.similarity_search(
                     question,
                     k=5,
-                    filter={
-                        "source":
-                        "chatbot-in-langgraph"
-                    }
+                    filter={"source": "chatbot_langgraph"}
                 )
 
             else:

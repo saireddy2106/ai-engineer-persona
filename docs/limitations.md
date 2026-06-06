@@ -1,25 +1,32 @@
 # Current Limitations
 
-1. Responses depend entirely on the uploaded resume and repository documentation.
+## Knowledge Scope
 
-2. The system currently indexes only the resume and selected GitHub repositories.
+The assistant only knows information available in:
 
-3. If project documentation is incomplete, the AI persona may provide limited answers.
+* Resume
+* Project documentation
 
-4. Calendar scheduling functionality is not yet integrated.
+It does not have access to external information sources.
 
-5. Voice interaction support is not yet integrated.
+## No Live GitHub Analysis
 
-6. Retrieval currently uses semantic similarity without reranking.
+The system currently relies on README files and does not inspect repository code directly.
 
-7. Multi-document reasoning can be improved through advanced retrieval strategies.
+## No Voice Interface
 
-# Future Improvements
+The current version is text-based.
 
-* Hybrid retrieval
-* Reranking models
-* Voice agent integration
-* Calendar booking
-* Email automation
-* Continuous GitHub synchronization
-* Better evaluation metrics
+Voice capabilities will be added using Vapi.
+
+## No Calendar Integration
+
+Meeting scheduling is not yet connected to a live calendar.
+
+## Retrieval Dependence
+
+Response quality depends on the quality of uploaded project documentation and resume content.
+
+## Limited Project Coverage
+
+Only the projects included in the knowledge base can be discussed accurately.
