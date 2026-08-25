@@ -11,18 +11,12 @@ load_dotenv()
 
 app = FastAPI()
 
-# ------------------------
-# Load LLM
-# ------------------------
+
 
 llm = ChatGroq(
-    model_name="llama-3.3-70b-versatile",
+    model_name="openai/gpt-oss-120b",
     temperature=0
 )
-
-# ------------------------
-# Load Chroma
-# ------------------------
 
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
@@ -33,16 +27,11 @@ db = Chroma(
     embedding_function=embeddings
 )
 
-# ------------------------
-# Request Model
-# ------------------------
 
 class Question(BaseModel):
     question: str
 
-# ------------------------
-# Endpoint
-# ------------------------
+
 
 @app.post("/ask")
 def ask_question(data: Question):
