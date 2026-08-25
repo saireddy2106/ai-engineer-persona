@@ -47,15 +47,14 @@ def load_llm():
         temperature=0
     )
 
-
 @st.cache_resource
 def load_db():
-
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
     return Chroma(
+        collection_name="sai_kumar_persona",
         persist_directory="chroma_db",
         embedding_function=embeddings
     )

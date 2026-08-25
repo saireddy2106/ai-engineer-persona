@@ -234,7 +234,8 @@ print("\nCreating new Chroma database...")
 vectorstore = Chroma.from_documents(
     documents=chunks,
     embedding=embeddings,
-    persist_directory=CHROMA_PATH
+    persist_directory=CHROMA_PATH,
+    collection_name="sai_kumar_persona"
 )
 
 
